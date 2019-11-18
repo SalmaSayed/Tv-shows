@@ -11,11 +11,8 @@ export default class ShowSearch extends React.Component {
   };
   handleSearch = searchInput => {
     getSearchResults(searchInput).then(response => {
-      this.setState({
-        showsList: response.data
-      });
-      console.log("salma");
-      this.render();
+      const newList = response.data.map(item => item.show);
+      this.setState({ showsList: newList });
     });
   };
   handleMouseOver = () => {
@@ -29,14 +26,17 @@ export default class ShowSearch extends React.Component {
     });
   };
   componentDidMount() {
+    this.setState({ searchResult: false });
     getShows().then(response => {
       this.setState({
-        showsList: this.state.showsList.concat(response.data)
+        showsList: response.data
       });
     });
   }
 
   render() {
+    console.log(this.state.showsList);
+
     return (
       <div>
         <Header handleSearch={this.handleSearch} />

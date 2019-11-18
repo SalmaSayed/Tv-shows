@@ -11,10 +11,5 @@ export const useStyles = makeStyles(() => ({
   content: {
     padding: 24,
     color: "#fff"
-  },
-
-  title: {
-    color: "#fff",
-    letterSpacing: "2px"
   }
 }));
