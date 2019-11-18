@@ -1,0 +1,14 @@
+.container {
+  background: $dark-blue;
+  min-height: 8rem;
+}
+
+.input {
+  font-size: $m-size !important;
+  border-radius: 5rem;
+  background: $light-blue;
+  min-width: 60rem;
+  max-height: 3rem;
+  margin: $l-size;
+  padding: $m-size;
+}
