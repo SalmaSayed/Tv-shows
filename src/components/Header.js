@@ -4,20 +4,10 @@ import SearchIcon from "@material-ui/icons/Search";
 import { debounce } from "lodash";
 
 export default class Header extends React.Component {
-  state = {
-    searchText: undefined
-  };
-  handleSearch = e => {
-    e.preventDefault();
-    this.props.handleSearch(this.state.searchText);
-  };
+  handleChangeInput = debounce(text => {
+    this.props.handleSearch(text);
+  }, 500);
 
-  handleChangeInput = event => {
-    event.preventDefault();
-    this.setState({
-      searchText: event.target.value.trim()
-    });
-  };
   render() {
     return (
       <div className="container">
@@ -26,13 +16,10 @@ export default class Header extends React.Component {
           id="search-text"
           type="text"
           name="searchInput"
-          onChange={e => this.handleChangeInput(e)}
+          onChange={event => this.handleChangeInput(event.target.value.trim())}
           endAdornment={
             <InputAdornment>
-              <IconButton
-                name="searchButton"
-                onClick={e => this.handleSearch(e)}
-              >
+              <IconButton name="searchButton">
                 <SearchIcon />
               </IconButton>
             </InputAdornment>

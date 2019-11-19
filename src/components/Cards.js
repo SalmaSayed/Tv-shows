@@ -15,12 +15,11 @@ const Cards = props => {
   const styles = useStyles();
   const mediaStyles = useCoverCardMediaStyles();
   const shadowStyles = useLightTopShadowStyles();
-  console.log(props.showsList);
   const placeholder = "./images/clapper.png";
   return (
     <Grid
       container={true}
-      justify="space-around"
+      justify="flex-start"
       alignItems="flex-start"
       spacing={0}
     >

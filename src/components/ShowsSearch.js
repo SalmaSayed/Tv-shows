@@ -35,8 +35,6 @@ export default class ShowSearch extends React.Component {
   }
 
   render() {
-    console.log(this.state.showsList);
-
     return (
       <div>
         <Header handleSearch={this.handleSearch} />
