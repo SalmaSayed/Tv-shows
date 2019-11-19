@@ -2,7 +2,7 @@
   "name": "tv-shows",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "author": "Salma Sayed",
   "license": "MIT",
   "scripts": {
