@@ -1,19 +1,28 @@
 import React from "react";
 import { getShows, getSearchResults } from "../utils/APIs/axios";
 import Cards from "./Cards";
-const axios = require("axios").default;
 import Header from "../components/Header";
 
 export default class ShowSearch extends React.Component {
   state = {
     showsList: [],
-    mouseEnter: false
+    mouseEnter: false,
+    hasShow: true
   };
   handleSearch = searchInput => {
-    getSearchResults(searchInput).then(response => {
-      const newList = response.data.map(item => item.show);
-      this.setState({ showsList: newList });
-    });
+    if (searchInput)
+      getSearchResults(searchInput).then(response => {
+        const newList = response.data.map(item => item.show);
+        if (!newList.length) this.state.hasShow = false;
+        else this.state.hasShow = true;
+        this.setState({ showsList: newList });
+      });
+    else
+      getShows().then(response => {
+        this.setState({
+          showsList: response.data
+        });
+      });
   };
   handleMouseOver = () => {
     this.setState({
@@ -26,7 +35,6 @@ export default class ShowSearch extends React.Component {
     });
   };
   componentDidMount() {
-    this.setState({ searchResult: false });
     getShows().then(response => {
       this.setState({
         showsList: response.data
@@ -38,6 +46,11 @@ export default class ShowSearch extends React.Component {
     return (
       <div>
         <Header handleSearch={this.handleSearch} />
+        {!this.state.hasShow && (
+          <div className="widget">
+            <h1>No Matching results</h1>
+          </div>
+        )}
         <Cards
           mouseEnter={this.state.mouseEnter}
           showsList={this.state.showsList}
