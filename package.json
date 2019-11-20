@@ -8,8 +8,7 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server",
-    "deploy": "gh-pages -d public/"
+    "dev-server": "webpack-dev-server"
   },
   "devDependencies": {
     "live-server": "^1.2.1",
@@ -30,7 +29,6 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^3.2.0",
-    "gh-pages": "^2.1.1",
     "js-levenshtein": "^1.1.6",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.0",

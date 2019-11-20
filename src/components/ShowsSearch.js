@@ -6,7 +6,6 @@ import Header from "../components/Header";
 export default class ShowSearch extends React.Component {
   state = {
     showsList: [],
-    mouseEnter: false,
     hasShow: true
   };
 
@@ -26,16 +25,7 @@ export default class ShowSearch extends React.Component {
       });
     }
   };
-  handleMouseOver = () => {
-    this.setState({
-      mouseEnter: true
-    });
-  };
-  handleMouseLeave = () => {
-    this.setState({
-      mouseEnter: false
-    });
-  };
+
   componentDidMount() {
     getShows().then(response => {
       this.setState({
@@ -56,8 +46,6 @@ export default class ShowSearch extends React.Component {
         <Cards
           mouseEnter={this.state.mouseEnter}
           showsList={this.state.showsList}
-          handleMouseLeave={this.handleMouseLeave}
-          handleMouseOver={this.handleMouseOver}
         />
       </div>
     );

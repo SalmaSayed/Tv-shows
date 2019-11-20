@@ -1,0 +1,21 @@
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.name {
+  padding: 2 * $xl-size 0;
+  color: $light-blue;
+}
+
+.summary {
+  margin: $s-size;
+  color: $light-blue;
+}
+
+.details-button {
+  color: $dark-blue !important;
+  background: $light-blue !important;
+  font-weight: bold !important;
+  font-size: $m-size !important;
+}
