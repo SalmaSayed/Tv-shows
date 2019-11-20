@@ -1,6 +1,6 @@
 .container {
-  background: $dark-blue;
-  min-height: 8rem;
+  background: $dark-blue !important;
+  padding: $m-size;
 }
 
 .input {
@@ -9,9 +9,7 @@
   border-radius: 5rem;
   background: $light-blue;
   min-width: 60rem;
-  max-height: 3rem;
-  margin: $l-size;
-  padding: $m-size;
+  padding: 0 $m-size;
 }
 
 .widget {
