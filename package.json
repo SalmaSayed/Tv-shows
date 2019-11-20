@@ -1,5 +1,11 @@
 {
   "name": "tv-shows",
+  "icon": [
+    {
+      "src": "/public/images/monitor.ico",
+      "type": "image/x-icon"
+    }
+  ],
   "version": "1.0.0",
   "description": "",
   "main": "src/app.js",

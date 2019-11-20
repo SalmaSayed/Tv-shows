@@ -8,7 +8,7 @@ const AppRouter = () => (
     <div>
       <Switch>
         <Route path="/" component={ShowsSearch} exact={true} />
-        <Route path="/details" component={ShowDetails} />
+        <Route path="/show/:id" component={ShowDetails} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

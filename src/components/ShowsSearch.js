@@ -9,19 +9,20 @@ export default class ShowSearch extends React.Component {
     mouseEnter: false,
     hasShow: true
   };
+
   handleSearch = searchInput => {
-    if (!searchInput) {
-      getShows().then(response => {
-        this.setState({
-          showsList: response.data
-        });
-      });
-    } else {
+    if (searchInput) {
       getSearchResults(searchInput).then(response => {
         const newList = response.data.map(item => item.show);
         if (!newList.length) this.state.hasShow = false;
         else this.state.hasShow = true;
         this.setState({ showsList: newList });
+      });
+    } else {
+      getShows().then(response => {
+        this.setState({
+          showsList: response.data
+        });
       });
     }
   };

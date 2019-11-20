@@ -6,7 +6,7 @@ import { debounce } from "lodash";
 export default class Header extends React.Component {
   handleChangeInput = debounce(text => {
     this.props.handleSearch(text);
-  }, 1000);
+  }, 100);
 
   render() {
     return (

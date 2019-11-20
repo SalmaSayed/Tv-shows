@@ -5,7 +5,9 @@ export const getShows = () => {
 };
 
 export const getSearchResults = searchInput => {
-  if (searchInput)
-    return axios.get(`http://api.tvmaze.com/search/shows?q=${searchInput}`);
-  else return axios.get(`http://api.tvmaze.com/shows`);
+  return axios.get(`http://api.tvmaze.com/search/shows?q=${searchInput}`);
+};
+
+export const getShow = id => {
+  return axios.get(` http://api.tvmaze.com/shows/${id}`);
 };
