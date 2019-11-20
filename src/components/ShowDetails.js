@@ -2,10 +2,11 @@ import React from "react";
 import { getShow } from "../utils/APIs/axios";
 import { Grid, Typography } from "@material-ui/core";
 import ShowCard from "./ShowCard";
+import { Rating } from "@material-ui/lab";
 
 class ShowDetails extends React.Component {
   state = {
-    show: undefined
+    show: {}
   };
   componentDidMount() {
     getShow(this.props.match.params.id).then(response => {
@@ -16,14 +17,21 @@ class ShowDetails extends React.Component {
     });
   }
   render() {
-    console.log(this.state.show);
     return (
-      <Grid container={true}>
+      <Grid container={true} justify="space-evenly">
         <Grid item={true}>
           <ShowCard show={this.state.show} />
         </Grid>
+        {this.state.show.rating && (
+          <Rating
+            name="customized-10"
+            value={this.state.show.rating.average}
+            readOnly
+            max={10}
+          />
+        )}
         <Grid item={true}>
-          <Typography variant="heading">{this.state.show.name}</Typography>
+          <Typography variant="h1">{this.state.show.name}</Typography>
         </Grid>
       </Grid>
     );

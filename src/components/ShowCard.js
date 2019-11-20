@@ -16,7 +16,7 @@ const ShowCard = props => {
   const styles = useStyles();
   const mediaStyles = useCoverCardMediaStyles();
   const shadowStyles = useLightTopShadowStyles();
-  const placeholder = "./images/clapper.png";
+  const placeholder = "./clapper.png";
 
   return (
     <Grid item xs={3}>
