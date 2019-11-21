@@ -25,9 +25,9 @@ class ShowDetails extends React.Component {
       <div>
         <AppBar position="static" className="container">
           <Toolbar style={{ justifyContent: "space-between" }}>
-            <NavLink to="/">
+            <Link className="nav" to="/">
               <h2>Home</h2>
-            </NavLink>
+            </Link>
             {this.state.show.url && (
               <div>
                 <Button className="details-button" href={this.state.show.url}>

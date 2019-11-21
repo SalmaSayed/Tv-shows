@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import ShowsSearch from "../components/ShowsSearch";
 import ShowDetails from "../components/ShowDetails";
 import NotFoundPage from "../components/NotFoundPage";
 const AppRouter = () => (
-  <BrowserRouter>
+  <HashRouter>
     <div>
       <Switch>
         <Route path="/" component={ShowsSearch} exact={true} />
@@ -12,7 +12,7 @@ const AppRouter = () => (
         <Route component={NotFoundPage} />
       </Switch>
     </div>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default AppRouter;
